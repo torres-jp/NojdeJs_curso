@@ -1,0 +1,1 @@
+Lorem Ipsum ha evolucionado como texto de relleno para la creación de prototipos en inglés. Como está escrito en un idioma latino que no tiene significado, no distrae del análisis del diseño de la página. Si bien Lorem Ipsum es una herramienta útil para los diseñadores, puede que no sea suficiente cuando se crean aplicaciones de software.
