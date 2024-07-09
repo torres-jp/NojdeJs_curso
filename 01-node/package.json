@@ -1,0 +1,15 @@
+{
+  "name": "01-node",
+  "version": "1.0.0",
+  "description": "¡Bienvenido! Este repositorio está diseñado para ayudarte a dar tus primeros pasos con Node.js. Aquí encontrarás los conceptos básicos y algunos ejercicios prácticos para comenzar.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "picocolors": "^1.0.1"
+  }
+}
