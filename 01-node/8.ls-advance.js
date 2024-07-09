@@ -20,7 +20,7 @@ async function ls (folder) {
     try {
       stats = await fs.stat(filePath)
     } catch (error) {
-      console.error(`No se pudo leer el archivo: ${filePath}`)
+      console.error(pc.red(`No se pudo leer el archivo: ${filePath}`))
       process.exit(1)
     }
 
