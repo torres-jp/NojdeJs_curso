@@ -9,5 +9,7 @@ Content-Type: application/json
 {
   "name": "ditto",
   "type": "fire",
-  "moves": ["fire blast", "thunderbolt"]
+  "moves": [
+    "fire blast",
+    "thunderbolt"]
 }
