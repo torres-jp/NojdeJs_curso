@@ -9,7 +9,7 @@ async function ls (folder) {
   try {
     files = await fs.readdir(folder)
   } catch (err) {
-    console.error(pc.green(`No se pudo leer el directorio: ${folder}`))
+    console.error(pc.yellow`No se pudo leer el directorio: ${folder}`)
     process.exit(1)
   }
 
