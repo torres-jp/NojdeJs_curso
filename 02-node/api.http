@@ -1,0 +1,15 @@
+### GETING POKEMON
+GET http://localhost:3000/pokemon/ditto
+
+
+### POST POKEMON
+POST http://localhost:3000/pokemon
+Content-Type: application/json
+
+{
+  "name": "ditto",
+  "type": "fire",
+  "moves": [
+    "fire blast",
+    "thunderbolt"]
+}
