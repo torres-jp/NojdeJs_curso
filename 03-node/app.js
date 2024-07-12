@@ -1,5 +1,6 @@
 const express = require('express')
 const movies = require('./movies.json')
+const crypto = require('node:crypto')
 
 const app = express()
 app.use(express.json())
@@ -10,8 +11,8 @@ app.get('/movies', (req, res) => {
   const { genre } = req.query
 
   if (genre) {
-    const filterdMovies = movies.filter(movie => movie.genre.some(g => g.toLocaleLowerCase() === genre.toLocaleLowerCase()))
-    return res.json(filterdMovies)
+    const filteredMovies = movies.filter(movie => movie.genre.some(g => g.toLowerCase() === genre.toLowerCase()))
+    return res.json(filteredMovies)
   }
 })
 
@@ -26,6 +27,20 @@ app.get('/movies/:id', (req, res) => {
 
 app.post('/movies', (req, res) => {
   const { title, year, director, duration, poster, genre, rate } = req.body
+
+  const newMovie = {
+    id: crypto.randomUUID(),
+    title,
+    year,
+    director,
+    duration,
+    poster,
+    genre,
+    rate: rate ?? 0
+  }
+
+  movies.push(newMovie)
+  res.status(201).json(newMovie)
 })
 
 const PORT = process.env.PORT ?? 3000
