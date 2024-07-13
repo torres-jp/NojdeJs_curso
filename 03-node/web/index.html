@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -28,13 +28,33 @@
                         <div data-id="${movie.id}">
                             <h2>${movie.title}</h2>
                             <img src="${movie.poster}" alt="${movie.title}" />
-                            <p>${movie.description}</p>
+                            <p>${movie.director}</p>
+                            <p>${movie.duration}</p>
+                            <p>${movie.year}</p>
+
+                            <button>Eliminar</button>
                         </div>
                     `
           })
           .join("")
 
         document.querySelector("main").innerHTML = html
+
+        document.addEventListener('click', e => {
+          if (e.target.matches('button')) {
+            const div = e.target.closest('div')
+            const id = div.dataset.id
+
+            fetch(`http://localhost:1234/movies/${id}`, {
+              method: 'DELETE',
+            })
+              .then(res => {
+                if (res.ok) {
+                  div.remove()
+                }
+              })
+          }
+        })
       })
 
   </script>
